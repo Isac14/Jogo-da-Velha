@@ -20,7 +20,41 @@ h1 {
 .square {
     width: 100px;
     height: 100px;
-    background-color: orange;
+    background-color: orangered;
     border: solid 1px;
     display: inline-block;
+}
+
+.o {
+    position: relative;
+}
+
+.o:after {
+    content: url(./Media/o\ icon.png);
+    height: 100px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.x {
+    position: relative;
+}
+
+.x:after {
+    content: url(./Media/x\ icon.png);
+    height: 100px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
