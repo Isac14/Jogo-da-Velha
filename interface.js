@@ -33,3 +33,32 @@
 // --------------------------------------------------
 
 // REFAZENDO
+
+// Garantindo que o documeto foi completamente carregado
+document.addEventListener("DOMContentLoaded", () => {
+    let quadrados = document.querySelectorAll(".square");
+
+    quadrados.forEach((quadrado) => {
+        quadrado.addEventListener("click", clique);
+    });
+});
+
+function clique(quadrado) {
+    let posicao = quadrado.target.id;
+
+    movimento(posicao);
+    atualizarQuadrados();
+}
+
+function atualizarQuadrados() {
+    let quadrados = document.querySelectorAll(".square");
+
+    quadrados.forEach((quadrado) => {
+        let posicao = quadrado.id;
+        let simbolo = tabuleiro[posicao];
+
+        if (simbolo != "") {
+            quadrado.innerHTML = `<div class='${simbolo}'></div>`;
+        }
+    });
+}

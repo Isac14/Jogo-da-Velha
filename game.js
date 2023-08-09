@@ -57,3 +57,22 @@
 // -----------------------------------------
 
 // REFAZENDO
+
+// Iniciando variáveis
+let tabuleiro = ["", "", "", "", "", "", "", "", ""];
+let jogadorDaVez = 0;
+let simbolos = ["o", "x"];
+
+// Inserindo simbolo na lista do tabuleiro
+function movimento(posicao) {
+    if (tabuleiro[posicao] == "") {
+        tabuleiro[posicao] = simbolos[jogadorDaVez];
+
+        // Alternando entre jogadores
+        if (jogadorDaVez == 0) {
+            jogadorDaVez = 1;
+        } else {
+            jogadorDaVez = 0;
+        }
+    }
+}
