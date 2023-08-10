@@ -46,7 +46,11 @@ document.addEventListener("DOMContentLoaded", () => {
 function clique(quadrado) {
     let posicao = quadrado.target.id;
 
-    movimento(posicao);
+    if (movimento(posicao)) {
+        setTimeout(() => {
+            alert("O jogador " + jogadorDaVez + " venceu. Parabéns!");
+        }, 10);
+    }
     atualizarQuadrados();
 }
 
@@ -57,6 +61,7 @@ function atualizarQuadrados() {
         let posicao = quadrado.id;
         let simbolo = tabuleiro[posicao];
 
+        // Adicionando a classe de cada simbolo para aparecer na tela
         if (simbolo != "") {
             quadrado.innerHTML = `<div class='${simbolo}'></div>`;
         }
